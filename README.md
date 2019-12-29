@@ -1,24 +1,6 @@
-# vue-electron-error
+vue ui -> create project -> manual -> add unit test, remove lint (save time) -> mocha + chai -> add plugin -> install vue-cli-plugin-electron-builder 
+-> finish install 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. npm run test:unit -> no error
+2. Add `import { ipcRenderer } from 'electron'` in HelloWorld.vue
+3. npm run test:unit -> errorq

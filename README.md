@@ -3,4 +3,4 @@ vue ui -> create project -> manual -> add unit test, remove lint (save time) -> 
 
 1. npm run test:unit -> no error
 2. Add `import { ipcRenderer } from 'electron'` in HelloWorld.vue
-3. npm run test:unit -> errorq
+3. npm run test:unit -> error

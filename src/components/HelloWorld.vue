@@ -27,16 +27,20 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <button @click="test">Test</button>
   </div>
 </template>
 
 <script>
-import { ipcRenderer } from 'electron';
-
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    test() {
+      ipcRenderer.send('test', this.msg);
+    }
   }
 }
 </script>

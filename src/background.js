@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, ipcMain } from 'electron'
+import path from 'path';
 import {
   createProtocol,
   installVueDevtools
@@ -17,7 +18,8 @@ protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
-    nodeIntegration: true
+    nodeIntegration: true,
+    preload: path.resolve(__static, 'preload.js')
   } })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -87,3 +89,7 @@ if (isDevelopment) {
     })
   }
 }
+
+ipcMain.on('test', (event, msg) => {
+  console.log(msg)
+});
